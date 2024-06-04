@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(45deg, cyan, yellow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 75vh;
+    width: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    height: calc(75vh / 16);
+    width: calc(75vh / 16);
+    background-color: white;
+}
+
+.grid {
+    border: 1px solid black;
+}
