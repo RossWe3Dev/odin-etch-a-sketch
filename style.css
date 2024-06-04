@@ -30,3 +30,8 @@ body {
 .grid {
     border: 1px solid black;
 }
+
+.black-square {
+    background-color: black;
+    transition: background-color 250ms;
+}
