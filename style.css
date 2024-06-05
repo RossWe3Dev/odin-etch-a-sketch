@@ -26,6 +26,10 @@ body {
     gap: 1rem;
 }
 
+.right-container {
+    gap: 0.25rem;
+}
+
 button {
     cursor: pointer;
     background: white;
@@ -53,6 +57,7 @@ button:hover {
     margin-bottom: 1rem;
 }
 
+/* .grid receives --grid-size value from JS */
 .grid {
     box-sizing: content-box;
     border: 1px solid black;
@@ -74,5 +79,11 @@ button:hover {
 
 .black-square {
     background-color: black;
+    transition: background-color 250ms;
+}
+
+/* receives a random --square-color from JS */
+.colored-square {
+    background-color: var(--square-color);
     transition: background-color 250ms;
 }

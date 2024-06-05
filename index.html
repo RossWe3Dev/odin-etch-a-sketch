@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a Sketch | TOP Project</title>
+
+    <link rel="icon" type="image/.png" href="img/icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,6 +14,7 @@
     <div class="left-container">
         <button class="size-btn">New Grid size</button>
         <button class="toggle-grid">Grid toggle</button>
+        <button class="toggle-rainbow">Rainbow toggle</button>
     </div>
     <div class="main-container">
         <h1>Etch a Sketch </h1>
@@ -20,7 +23,16 @@
         </div>
     </div>
     <div class="right-container">
-        Credits © 2024 Ross We3Dev 🎮
+        <p>
+            Copyright ©
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            Ross We3Dev
+        </p>
+        <a href="https://github.com/RossWe3Dev/odin-etch-a-sketch" target="_blank">
+            <img src="img/github-logo.png" alt="GitHub Logo" height="16px" width="16px">
+        </a>
     </div>
     <script src="script.js"></script>
 </body>
