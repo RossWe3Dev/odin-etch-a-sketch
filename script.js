@@ -54,5 +54,6 @@ function createNewGrid() {
 const toggleGrid = document.querySelector(".toggle-grid");
 
 toggleGrid.addEventListener('click', () => {
-    square.classList.toggle("grid-borders");
-})
+    const allSquares = document.querySelectorAll(".square");
+    allSquares.forEach(square => square.classList.toggle("grid-borders"));
+});
