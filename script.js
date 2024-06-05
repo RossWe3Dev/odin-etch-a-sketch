@@ -1,3 +1,4 @@
+//* Grid creation
 const grid = document.querySelector(".grid");
 
 let gridSize = 16;
@@ -16,7 +17,33 @@ function createGridSquare() {
     return square;
 }
 
-for (i = 0; i < (gridSize * gridSize); i++) {
-    const square = createGridSquare();
-    grid.appendChild(square);
+function generateGrid() {
+    for (i = 0; i < (gridSize * gridSize); i++) {
+        const square = createGridSquare();
+        grid.appendChild(square);
+    }
 }
+
+// Generate initial 16 * 16 grid
+generateGrid();
+
+
+//* Button to change gridSize
+const sizeBtn = document.querySelector(".size-btn");
+
+sizeBtn.addEventListener('click', () => {
+    let newGridSize = parseInt(prompt("Enter number of squares per side for a new grid.\n\nPlease pick a NUMBER between 1 and 100"), 10);
+
+    if (!newGridSize) {
+        alert("Please enter a valid number");
+        return;
+    } else if (newGridSize <= 0 || newGridSize > 100) {
+        alert("Please enter a number between 1 and 100");
+        return;
+    }
+
+    grid.innerHTML = '';
+    gridSize = newGridSize;
+    generateGrid();
+
+})
