@@ -28,10 +28,13 @@ function generateGrid() {
 generateGrid();
 
 
+//! BUTTONS
 //* Button to change gridSize
 const sizeBtn = document.querySelector(".size-btn");
 
-sizeBtn.addEventListener('click', () => {
+sizeBtn.addEventListener('click', createNewGrid)
+
+function createNewGrid() {
     let newGridSize = parseInt(prompt("Enter number of squares per side for a new grid.\n\nPlease pick a NUMBER between 1 and 100"), 10);
 
     if (!newGridSize) {
@@ -45,5 +48,11 @@ sizeBtn.addEventListener('click', () => {
     grid.innerHTML = '';
     gridSize = newGridSize;
     generateGrid();
+}
 
+//* Hide/Show Grid button
+const toggleGrid = document.querySelector(".toggle-grid");
+
+toggleGrid.addEventListener('click', () => {
+    square.classList.toggle("grid-borders");
 })
