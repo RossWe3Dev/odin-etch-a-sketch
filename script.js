@@ -24,9 +24,9 @@ function generateGridSquare() {
 
     const square = document.createElement("div");
     square.classList.add("square");
-    checkGridToggle(square);
+    checkGridToggle(square);        //* must call the parameter
 
-    applyColor(square);     //* Must pass the parameter square
+    applyColor(square);
 
     return square;
 }
@@ -74,9 +74,13 @@ function generateNewGrid() {
         return;
     }
 
-    grid.innerHTML = '';
+    clearGrid();
     gridSize = newGridSize;
     generateGrid();
+}
+
+function clearGrid() {
+    grid.innerHTML = '';
 }
 
 
@@ -111,6 +115,6 @@ toggleRainbow.addEventListener('click', () => {
 
 //* Clear button
 clearBtn.addEventListener('click', () => {
-    grid.innerHTML = '';
+    clearGrid();
     generateGrid(gridSize);
 })
