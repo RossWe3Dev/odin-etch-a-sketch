@@ -44,6 +44,10 @@ button:hover {
     background: linear-gradient(45deg, cyan, yellow);
 }
 
+button.active {
+    background: linear-gradient(45deg, cyan, yellow);
+}
+
 .main-container {
     display: flex;
     flex-direction: column;

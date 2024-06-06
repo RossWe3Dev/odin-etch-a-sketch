@@ -3,6 +3,7 @@ const grid = document.querySelector(".grid");
 
 let gridSize = 16;
 let randomColor = '';
+let gridIsON = true;
 let rainbowIsON = false;
 
 // Generate initial 16 * 16 grid
@@ -23,11 +24,17 @@ function createGridSquare() {
 
     const square = document.createElement("div");
     square.classList.add("square");
-    square.classList.add("grid-borders");
+    checkGridToggle(square);
 
     applyColor(square);     //* Must pass the parameter square
 
     return square;
+}
+
+function checkGridToggle(square) {
+    if (gridIsON) {
+        square.classList.add("grid-borders");
+    }
 }
 
 function applyColor(square) {
@@ -39,7 +46,6 @@ function applyColor(square) {
         } else {
             square.style.setProperty('--square-color', 'black');
         }
-
         square.classList.add("colored-square");
     });
 }
@@ -53,7 +59,6 @@ function generateRGBColor() {
     }
 
     rgbString = rgbString.slice(0, -1); // Remove the last character (comma)
-
     rgbString += ")";
     return rgbString;   // returns a random rgb string
 }
@@ -83,15 +88,22 @@ sizeBtn.addEventListener('click', createNewGrid)
 
 //* Hide/Show Grid by toggling .grid-borders selector in CSS
 const toggleGrid = document.querySelector(".toggle-grid");
+toggleGrid.classList.add("active");
+
 toggleGrid.addEventListener('click', () => {
+    toggleGrid.classList.toggle("active")
+    gridIsON = !gridIsON
     const allSquares = document.querySelectorAll(".square");
     allSquares.forEach(square => square.classList.toggle("grid-borders"));
+    return gridIsON;
 });
 
 
 //* Random colors button
 const toggleRainbow = document.querySelector(".toggle-rainbow");
+
 toggleRainbow.addEventListener('click', () => {
+    toggleRainbow.classList.toggle("active");
     rainbowIsON = !rainbowIsON;
     return rainbowIsON;
 })
