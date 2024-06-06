@@ -13,12 +13,12 @@ generateGrid();
 //! FUNCTIONS
 function generateGrid() {
     for (i = 0; i < (gridSize * gridSize); i++) {
-        const square = createGridSquare();
+        const square = generateGridSquare();
         grid.appendChild(square);
     }
 }
 
-function createGridSquare() {
+function generateGridSquare() {
     // Update CSS variable in .grid which then changes height and width of squares
     grid.style.setProperty('--grid-size', gridSize);
 
@@ -63,7 +63,7 @@ function generateRGBColor() {
     return rgbString;   // returns a random rgb string
 }
 
-function createNewGrid() {
+function generateNewGrid() {
     let newGridSize = parseInt(prompt("Enter number of squares per side for a new grid.\n\nPlease pick a NUMBER between 1 and 100"), 10);
 
     if (!newGridSize) {
@@ -81,13 +81,16 @@ function createNewGrid() {
 
 
 //! BUTTONS
-//* Button to change gridSize
 const sizeBtn = document.querySelector(".size-btn");
-sizeBtn.addEventListener('click', createNewGrid)
+const toggleGrid = document.querySelector(".toggle-grid");
+const toggleRainbow = document.querySelector(".toggle-rainbow");
+const clearBtn = document.querySelector(".clear");
+
+//* Button to change gridSize
+sizeBtn.addEventListener('click', generateNewGrid)
 
 
 //* Hide/Show Grid by toggling .grid-borders selector in CSS
-const toggleGrid = document.querySelector(".toggle-grid");
 toggleGrid.classList.add("active");
 
 toggleGrid.addEventListener('click', () => {
@@ -100,10 +103,14 @@ toggleGrid.addEventListener('click', () => {
 
 
 //* Random colors button
-const toggleRainbow = document.querySelector(".toggle-rainbow");
-
 toggleRainbow.addEventListener('click', () => {
     toggleRainbow.classList.toggle("active");
     rainbowIsON = !rainbowIsON;
     return rainbowIsON;
+})
+
+//* Clear button
+clearBtn.addEventListener('click', () => {
+    grid.innerHTML = '';
+    generateGrid(gridSize);
 })

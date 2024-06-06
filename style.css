@@ -9,8 +9,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(45deg, cyan, yellow);
     background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 3rem;
@@ -28,6 +28,10 @@ body {
 
 .right-container {
     gap: 0.25rem;
+}
+
+.right-container>p {
+    margin-top: 1rem;
 }
 
 button {
