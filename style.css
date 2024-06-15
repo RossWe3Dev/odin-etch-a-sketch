@@ -34,10 +34,16 @@ body {
     margin-top: 1rem;
 }
 
+.right-container img:hover {
+    scale: 120%;
+    filter: drop-shadow(.1rem .1rem .1rem white);
+}
+
 button {
     cursor: pointer;
     background: white;
     border: 1px solid black;
+    box-shadow: .25rem .25rem .5rem black;
     border-radius: .25rem;
     padding: .75rem;
     text-transform: uppercase;
@@ -61,14 +67,15 @@ button.active {
 
 .main-container>h1 {
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
 /* .grid receives --grid-size value from JS */
 .grid {
     box-sizing: content-box;
-    border: 1px solid black;
+    box-shadow: 0 0 .5rem black;
+    /* border: 1px solid black; */
     height: 75vh;
     width: 75vh;
     display: flex;
